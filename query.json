@@ -1,0 +1,103 @@
+{
+  "query": {
+    "source": "{source_url}",
+    "format": [
+      {
+        "output": "mp4",
+        "destination": {
+          "url": "{endpoint}{base_folder}1080/{filename}.mp4",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "size": "1920x1080",
+        "aspect_ratio": "16:9",
+        "resize_mode": "crop",
+        "quality": 23,
+        "tag": "1080p",
+        "audio_bitrate": 128,
+        "pix_format": "yuv420p"
+      },
+      {
+        "output": "mp4",
+        "destination": {
+          "url": "{endpoint}{base_folder}720/{filename}.mp4",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "size": "1280x720",
+        "aspect_ratio": "16:9",
+        "resize_mode": "crop",
+        "quality": 23,
+        "tag": "720p",
+        "audio_bitrate": 128,
+        "pix_format": "yuv420p"
+      },
+      {
+        "output": "mp4",
+        "destination": {
+          "url": "{endpoint}{base_folder}480/{filename}.mp4",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "size": "864x486",
+        "aspect_ratio": "16:9",
+        "resize_mode": "crop",
+        "quality": 25,
+        "tag": "480p",
+        "audio_bitrate": 128,
+        "pix_format": "yuv420p"
+      },
+      {
+        "output": "mp4",
+        "destination": {
+          "url": "{endpoint}{base_folder}360/{filename}.mp4",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "size": "640x360",
+        "aspect_ratio": "16:9",
+        "resize_mode": "crop",
+        "quality": 26,
+        "tag": "360p",
+        "audio_bitrate": 128,
+        "pix_format": "yuv420p"
+      },
+      {
+        "output": "mp4",
+        "destination": {
+          "url": "{endpoint}{base_folder}240/{filename}.mp4",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "size": "416x234",
+        "aspect_ratio": "16:9",
+        "resize_mode": "crop",
+        "quality": 27,
+        "tag": "240p",
+        "audio_bitrate": 128,
+        "pix_format": "yuv420p"
+      },
+      {
+        "output": "mp3",
+        "destination": {
+          "url": "{endpoint}{base_folder}mp3/{filename}.mp3",
+          "key": "{key}",
+          "secret": "{secret}"
+        },
+        "audio_bitrate": 128,
+        "tag": "mp3"
+      },
+      {
+        "output": "thumbnail",
+        "time": "0.5",
+        "height": "480",
+        "image_format": "jpg",
+        "destination": {
+          "url": "{endpoint}{base_folder}thumb/thumb_50.jpg",
+          "key": "{key}",
+          "secret": "{secret}"
+        }
+      }
+    ]
+  }
+}
