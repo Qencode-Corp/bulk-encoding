@@ -1,6 +1,9 @@
-import qencode
-import conf
 import sys
+if sys.version_info[0] == 2:
+  import qencode
+else:
+  import qencode3 as qencode
+import conf
 import time
 import threading
 import random
@@ -94,9 +97,13 @@ def read_input_links(filename):
         return file.readlines()
 
 def log_failed_job(url, message='Error processing job'):
-    msg = "%s: %s" % (url.decode('utf-8'), message)
+    if sys.version_info[0] == 2:
+        url = url.decode('utf-8')
+    msg = "%s: %s" % (url, message)
     print(msg)
-    msg = msg.encode('utf-8') + '\n'
+    if sys.version_info[0] == 2:
+        msg = msg.encode('utf-8')
+    msg = msg + '\n'
     with open(FAILED_JOBS, "a") as log_file:
         log_file.write(msg)
 
@@ -112,7 +119,7 @@ def create_task(client):
     if task.error:
         print(task.message)
         if task.message == 'Token not found':
-            print 'Getting new token...'
+            print('Getting new token...')
             client = qencode.client(conf.QENCODE_API_KEY, conf.QENCODE_API_SERVER)
             return create_task(client)
     return task, client
