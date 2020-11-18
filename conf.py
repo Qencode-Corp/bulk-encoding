@@ -3,7 +3,7 @@ INPUT_LINKS = './input_links.txt'
 
 # Output settings
 # You can specify any storage type here.
-# Supported protocols are: ftp, sftp, ftps, s3, b2, aspera
+# Supported protocols are: ftp, sftp, ftps, s3, b2 (for Backblaze B2), aspera, azblob (for Azure Blob Storage)
 DESTINATION_ENDPOINT = 's3://your-storage-provider.com/bucket'
 DESTINATION_BASE_FOLDER = '/some/folder/'
 DESTINATION_KEY = 'your-key' #replace this with your key or username
