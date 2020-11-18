@@ -19,6 +19,7 @@ python encode.py
 Modify code in encode.py - get_file_name()
 To use original file names you can use the following code:
 
+```python
 def get_file_name(self, url):
     file_name = url[url.rfind("/") + 1:]
     self.original_filename = file_name
@@ -26,5 +27,5 @@ def get_file_name(self, url):
     if len(eol) == 1:
         eol.append('')
     return '.'.join(eol[:-1])
-
+```
 
